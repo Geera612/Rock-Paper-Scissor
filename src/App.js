@@ -20,6 +20,8 @@ function App()  {
     setSystemSelection(-1)
   }
 
+  //Check whether the selections are alreay made, 
+  //so the selections buttons are disabled until play again is clicked
   const roundPlayed = playerSelection !== -1 && SystemSelection !== -1
 
   const onPlayerSelection = (playerSelection) => {
@@ -43,6 +45,14 @@ function App()  {
     }
   }, [playerSelection])
 
+  //Logic to select the winner
+  //TODO change the logic to 
+//   if (p1 + 1) % 3 == p2:
+//         return "Player 2 won"
+//     elif p1 == p2:
+//         return "It is a draw"
+//     else:
+//         return "Player 1 won"
   const getWinner = () => {
     if (playerSelection === SystemSelection) {
       return 'Tie'
